@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel.Design.Serialization;
 
 public class Land : Card
 {
@@ -10,7 +9,7 @@ public class Land : Card
         string supertype,
         string subtype,
         string rarity)
-        : base(name, color, 0, supertype, "Land", subtype, rarity)
+        : base(name, color, 0, "Land", supertype, subtype, rarity)
     {
         
     }
@@ -19,10 +18,12 @@ public class Land : Card
     public override void Display()
     {
         Console.WriteLine($"{_name} ({_color})");
+        Console.WriteLine($"{_supertype} {_type} - {_subtype}");
+        Console.WriteLine($"Rarity: {_rarity}");
         
     }
     public override string GetSaveString()
     {
-        return $"Land|{_name}|{_color}|{_supertype}|{_type}|{_subtype}|{_rarity}";
+        return $"Land|{_name}|{_color}|{_cost}|{_supertype}|{_type}|{_subtype}|{_rarity}";
     }
 }

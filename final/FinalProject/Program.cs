@@ -1,12 +1,12 @@
 using System;
-using System.ComponentModel.DataAnnotations;
+
 
 class Program
 {
     static void Main()
     {
         CardList cardList = new CardList();
-
+        
         while (true)
         {
             Console.WriteLine();
@@ -52,13 +52,26 @@ class Program
                     break;
 
                 case "6":
+                    if (!cardList.IsLoaded)
+                    {
+                        Console.WriteLine("No card list has been loaded yet.");
+                    }
                     cardList.SortCards();
                     Console.WriteLine("Cards sorted.");
                     cardList.DisplayList();
                     break;
 
                 case "7":
-                    return;
+                if (!cardList.IsSaved)
+                {
+                    Console.WriteLine("You have unsaved changes.");
+                    Console.Write("Quit anyway? (y/n): ");
+                    if (Console.ReadLine().ToLower() != "y")
+                    {
+                        break;
+                    }
+                }
+                return;
             }
 
             static void AddCard(CardList cardList)

@@ -10,7 +10,7 @@ public class Artifact : Card
         string supertype,
         string subtype,
         string rarity)
-        : base(name, color, cost, supertype, "Artifact", subtype, rarity)
+        : base(name, color, cost, "Artifact",  supertype, subtype, rarity)
     {
         
     }
@@ -19,6 +19,8 @@ public class Artifact : Card
     {
         Console.WriteLine($"{_name} ({_color})");
         Console.WriteLine($"Mana Cost {_cost}");
+        Console.WriteLine($"{_supertype} {_type} - {_subtype}");
+        Console.WriteLine($"Rarity: {_rarity}");
     }
     public override string GetSaveString()
     {

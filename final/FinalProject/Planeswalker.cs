@@ -11,7 +11,7 @@ public class Planeswalker : Card
         string subtype,
         string rarity,
         int loyalty)
-        : base(name, color, cost, supertype, "Planeswalker", subtype, rarity)
+        : base(name, color, cost, "Planeswalker",  supertype, subtype, rarity)
     {
         _loyalty = loyalty;
     }
@@ -20,7 +20,9 @@ public class Planeswalker : Card
     {
         Console.WriteLine($"{_name} ({_color})");
         Console.WriteLine($"Mana Cost {_cost}");
+        Console.WriteLine($"{_supertype} {_type} - {_subtype}");
         Console.WriteLine($"Loyalty {_loyalty}");
+        Console.WriteLine($"Rarity: {_rarity}");
     }
     public override string GetSaveString()
     {

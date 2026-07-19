@@ -10,7 +10,7 @@ public class Enchantment : Card
         string supertype,
         string subtype,
         string rarity)
-        : base(name, color, cost, supertype, "Enchantment", subtype, rarity)
+        : base(name, color, cost, "Enchantment", supertype, subtype, rarity)
     {
         
     }
@@ -19,6 +19,8 @@ public class Enchantment : Card
     {
         Console.WriteLine($"{_name} ({_color})");
         Console.WriteLine($"Mana Cost {_cost}");
+        Console.WriteLine($"{_supertype} {_type} - {_subtype}");
+        Console.WriteLine($"Rarity: {_rarity}");
     }
     public override string GetSaveString()
     {

@@ -1,5 +1,5 @@
 using System;
-using System.Runtime.InteropServices.Marshalling;
+
 
 public abstract class Card : IComparable<Card>
 {
@@ -40,7 +40,7 @@ public abstract class Card : IComparable<Card>
 
     public int CompareTo(Card other)
 {
-    int result = _color.CompareTo(other._color);
+    int result = string.Compare(_color, other._color, StringComparison.OrdinalIgnoreCase);
 
     if (result != 0) return result;
 

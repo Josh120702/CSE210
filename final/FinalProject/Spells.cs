@@ -11,7 +11,7 @@ public class Spells : Card
         string supertype,
         string subtype,
         string rarity)
-        : base(name, color, cost, supertype, spellType, subtype, rarity)
+        : base(name, color, cost, spellType, supertype, subtype, rarity)
     {
         
     }
@@ -20,7 +20,10 @@ public class Spells : Card
     {
         Console.WriteLine($"{_name} ({_color})");
         Console.WriteLine($"Mana Cost {_cost}");
-        
+        Console.WriteLine($"{_supertype} {_type}");
+        Console.WriteLine($"Subtype: {_subtype}");
+        Console.WriteLine($"Rarity: {_rarity}");
+
     }
     public override string GetSaveString()
     {

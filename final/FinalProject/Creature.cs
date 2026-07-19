@@ -16,7 +16,7 @@ public class Creature : Card
         string rarity,
         int power,
         int toughness) 
-        : base(name, color, cost, supertype, "Creature", subtype, rarity)
+        : base(name, color, cost, "Creature",supertype, subtype, rarity)
     {
         _power = power;
         _toughness = toughness;
